@@ -15,7 +15,7 @@ import sys
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+ROOT_DIR = os.path.dirname(BASE_DIR)
 # sys.path.append(os.path.dirname(__file__))
 
 # Quick-start development settings - unsuitable for production
@@ -74,6 +74,8 @@ TEMPLATES = [
         },
     },
 ]
+
+STATIC_ROOT = os.path.join(ROOT_DIR, 'static')
 
 WSGI_APPLICATION = 'RoboHouse.wsgi.application'
 

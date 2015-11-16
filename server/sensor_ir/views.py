@@ -1,6 +1,7 @@
 
 from django.shortcuts import render
 from rest_framework import viewsets
+from rest_framework.permissions import AllowAny
 
 from models import IRCommand
 from serializers import IRCommandSeiralizer
@@ -8,7 +9,7 @@ from serializers import IRCommandSeiralizer
 class IRCommandViewSet(viewsets.ModelViewSet):
     model = IRCommand
     serializer_class = IRCommandSeiralizer
-    # permission_classes = (IsAdminUser, CreateOrReadOnly)
+    permission_classes = (AllowAny, )
     queryset = IRCommand.objects.all()
 
 
