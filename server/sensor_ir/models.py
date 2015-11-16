@@ -18,7 +18,7 @@ class IRRemoute(models.Model):
 
 class IRCommand(models.Model):
     remoute = models.ForeignKey(IRRemoute, verbose_name='Remoute control', blank=True, null=True, default=None)
-    name = models.CharField(max_length=64)
+    name = models.CharField(max_length=64, default='', blank=True)
     encoding = models.CharField(verbose_name='Command encoding', max_length=64, default='')
     code = models.CharField(verbose_name='Command hex code', max_length=64, default='')
     created = models.DateTimeField(verbose_name='Creation date', auto_now_add=True)
